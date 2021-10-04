@@ -9,6 +9,6 @@ pub fn register(config: &mut web::ServiceConfig) {
             .service(example::get_one)
             .service(example::create_one)
             .service(example::delete_one)
-            .service(example::update_one)
+            .service(example::update_one),
     );
 }

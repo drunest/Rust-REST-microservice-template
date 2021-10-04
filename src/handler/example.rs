@@ -17,10 +17,7 @@ pub async fn create_one(
             name: row.get(1),
             updated_at: row.get(2),
         }),
-        Err(err) => {
-            println!("{:?}", err);
-            HttpResponse::InternalServerError().finish()
-        },
+        Err(_) => HttpResponse::InternalServerError().finish(),
     }
 }
 
@@ -36,10 +33,7 @@ pub async fn get_one(pool: web::Data<PgPool>, example_id: web::Path<i32>) -> imp
             name: row.get(1),
             updated_at: row.get(2),
         }),
-        Err(err) => {
-            println!("{:?}", err);
-            HttpResponse::InternalServerError().finish()
-        },
+        Err(_) => HttpResponse::InternalServerError().finish(),
     }
 }
 
@@ -93,9 +87,6 @@ pub async fn update_one(
             name: row.get(1),
             updated_at: row.get(2),
         }),
-        Err(err) => {
-            println!("{:?}", err);
-            HttpResponse::InternalServerError().finish()
-        },
+        Err(_) => HttpResponse::InternalServerError().finish(),
     }
 }
