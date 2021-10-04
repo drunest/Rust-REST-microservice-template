@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - db_example_service:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file: ./.env
+
+volumes:
+  db_example_service: {}
