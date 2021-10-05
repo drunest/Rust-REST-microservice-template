@@ -21,7 +21,7 @@ pub async fn create_one(
     }
 }
 
-#[get("/{example_id}")]
+#[get("/{example_id}/")]
 pub async fn get_one(pool: web::Data<PgPool>, example_id: web::Path<i32>) -> impl Responder {
     let result = sqlx::query("SELECT * FROM examples WHERE id = $1")
         .bind(example_id.as_ref())
@@ -58,7 +58,7 @@ pub async fn get_all(pool: web::Data<PgPool>) -> impl Responder {
     }
 }
 
-#[delete("/{example_id}")]
+#[delete("/{example_id}/")]
 pub async fn delete_one(pool: web::Data<PgPool>, example_id: web::Path<i32>) -> impl Responder {
     let result = sqlx::query("DELETE FROM examples where id = $1")
         .bind(example_id.as_ref())
@@ -70,7 +70,7 @@ pub async fn delete_one(pool: web::Data<PgPool>, example_id: web::Path<i32>) -> 
     }
 }
 
-#[put("/{example_id}")]
+#[put("/{example_id}/")]
 pub async fn update_one(
     pool: web::Data<PgPool>,
     example_id: web::Path<i32>,
