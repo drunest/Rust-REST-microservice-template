@@ -27,8 +27,9 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .wrap(middleware::Logger::default())
-            // FIXME: Path normalizer makes shit even worst
-            //.wrap(middleware::NormalizePath::default())
+            .wrap(middleware::NormalizePath::new(
+                middleware::normalize::TrailingSlash::MergeOnly,
+            ))
             .wrap(create_cors())
             .data(pool.clone())
             .configure(handler::register)
