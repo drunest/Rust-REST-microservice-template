@@ -25,7 +25,7 @@ version = "0.6.2"
 features = ["postgres", "runtime-async-std-rustls", "chrono", "offline"]
 
 [dependencies.axum]
-version = "0.6.0-rc.2"
+version = "0.6.0-rc.4"
 
 [dependencies.tower-http]
 version = "0.3.4"
