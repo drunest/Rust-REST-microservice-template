@@ -17,7 +17,7 @@ version = "1.26.0"
 features = ["full"]
 
 [dependencies.chrono]
-version = "0.4.23"
+version = "0.4.24"
 features=["serde"]
 
 [dependencies.sqlx]
