@@ -21,7 +21,7 @@ version = "0.4.24"
 features=["serde"]
 
 [dependencies.sqlx]
-version = "0.6.2"
+version = "0.6.3"
 features = ["postgres", "runtime-async-std-rustls", "chrono", "offline"]
 
 [dependencies.axum]
