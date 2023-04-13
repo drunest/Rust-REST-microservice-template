@@ -7,7 +7,7 @@ edition = "2018"
 
 [dependencies]
 serde = "1.0.160"
-serde_json = "1.0.95"
+serde_json = "1.0.96"
 tower = "0.4.13"
 tracing = "0.1"
 tracing-subscriber = "0.3"
