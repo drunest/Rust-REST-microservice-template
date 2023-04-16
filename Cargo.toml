@@ -1,34 +1,26 @@
 [package]
 name = "rust-rest-microservice-template"
 version = "0.1.0"
-edition = "2018"
+authors = ["Jontze"]
+edition = "2021"
+publish = false
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = [".", "api", "entity", "migration"]
 
-[dependencies]
-axum = "0.6.15"
+[workspace.dependencies]
 serde = "1.0.160"
-serde_json = "1.0.96"
-tower = "0.4.13"
-tracing = "0.1"
-tracing-subscriber = "0.3"
 
-[dependencies.tokio]
+[workspace.dependencies.tokio]
 version = "1.27.0"
 features = ["full"]
 
-[dependencies.chrono]
-version = "0.4.24"
-features=["serde"]
+[workspace.dependencies.sea-orm]
+version = "0.11.2"
+features = [
+    "runtime-tokio-rustls",
+    "sqlx-postgres",
+]
 
-[dependencies.sqlx]
-version = "0.6.3"
-features = ["postgres", "runtime-async-std-rustls", "chrono", "offline"]
-
-[dependencies.tower-http]
-version = "0.4.0"
-features = ["trace", "cors", "compression-gzip", "request-id"]
-
-[dependencies.hyper]
-version = "0.14.26"
-features = ["full"]
+[dependencies]
+api = { path = "api" }

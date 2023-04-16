@@ -1,0 +1,30 @@
+[package]
+name = "api"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.6.15"
+tokio = { workspace = true }
+serde = { workspace = true }
+serde_json = "1.0.96"
+tower = "0.4.13"
+tracing = "0.1"
+tracing-subscriber = "0.3"
+sea-orm = { workspace = true }
+migration ={ path = "../migration"}
+entity ={ path = "../entity"}
+
+[dependencies.chrono]
+version = "0.4.24"
+features=["serde"]
+
+[dependencies.tower-http]
+version = "0.4.0"
+features = ["trace", "cors", "compression-gzip", "request-id"]
+
+[dependencies.hyper]
+version = "0.14.26"
+features = ["full"]
