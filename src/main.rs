@@ -22,7 +22,7 @@ async fn main() {
 
     let pool = create_pool().await;
     let state = std::sync::Arc::new(state::AppState { db: pool.clone() });
-    let app = Router::with_state(state)
+    let app = Router::new()
         .layer(
             ServiceBuilder::new()
                 .layer(TraceLayer::new_for_http())
@@ -39,7 +39,8 @@ async fn main() {
             routing::get(handler::example::get_one)
                 .delete(handler::example::delete_one)
                 .put(handler::example::update_one),
-        );
+        )
+        .with_state(state);
 
     axum::Server::bind(&"0.0.0.0:8080".parse().unwrap())
         .serve(app.into_make_service())
