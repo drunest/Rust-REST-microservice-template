@@ -9,7 +9,7 @@ publish = false
 members = [".", "api", "entity", "migration"]
 
 [workspace.dependencies]
-serde = "1.0.163"
+serde = "1.0.164"
 
 [workspace.dependencies.tokio]
 version = "1.28.2"
