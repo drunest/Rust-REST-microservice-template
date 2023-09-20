@@ -18,7 +18,7 @@ migration ={ path = "../migration"}
 entity ={ path = "../entity"}
 
 [dependencies.chrono]
-version = "0.4.30"
+version = "0.4.31"
 features=["serde"]
 
 [dependencies.tower-http]
