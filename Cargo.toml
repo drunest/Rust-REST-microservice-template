@@ -12,7 +12,7 @@ members = [".", "api", "entity", "migration"]
 serde = "1.0.205"
 
 [workspace.dependencies.tokio]
-version = "1.39.1"
+version = "1.40.0"
 features = ["full"]
 
 [workspace.dependencies.sea-orm]
